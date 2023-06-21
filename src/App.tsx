@@ -1,18 +1,16 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
+import { Container, CssBaseline, Grid, Typography } from '@mui/material';
+import { ThemeProvider } from '@mui/material/styles';
+import theme from './theme';
+
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-    <body>
-      <h1> hello typescript</h1>
-
-    </body>
-
+    <ThemeProvider theme={theme}>
+      <h1>hello typescript</h1>
+    </ThemeProvider>
     </>
   )
 }
