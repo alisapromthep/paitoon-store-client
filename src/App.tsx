@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from './theme';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -17,7 +17,7 @@ function App() {
         <Routes> 
           <Route path ="/" element={<LoginPage/>}/>
           <Route path ="/dashboard" element={<DashBoardPage/>}/>
-          <Route path="/inventory" element={<InventoryPage/>}/>
+          <Route path ="/inventory" element={<InventoryPage/>}/>
         </Routes>
       </Router>
     </ThemeProvider>
