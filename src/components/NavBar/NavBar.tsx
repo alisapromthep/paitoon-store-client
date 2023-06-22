@@ -30,7 +30,12 @@ const NavBar = () => {
                 }}>
                     <MenuItem>
                         <NavLink to ="/dashboard" className='nav__link'>
-                            <Typography textAlign='center' >Dashboard</Typography>
+                            <Typography textAlign='center'>Dashboard</Typography>
+                        </NavLink>
+                    </MenuItem>
+                    <MenuItem>
+                        <NavLink to ="/inventory" className='nav__link'>
+                            <Typography textAlign='center'>Inventory</Typography>
                         </NavLink>
                     </MenuItem>
                     <MenuItem onClick={handleOpen}>
