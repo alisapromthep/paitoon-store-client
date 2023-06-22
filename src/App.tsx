@@ -1,15 +1,23 @@
 import './App.css';
-import { Container, CssBaseline, Grid, Typography } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from './theme';
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import NavBar from './components/NavBar/NavBar';
+import DashBoardPage from './pages/DashBoardPage/DashBoardPage';
+import LoginPage from './pages/LoginPage/LoginPage';
 
 function App() {
 
   return (
     <>
     <ThemeProvider theme={theme}>
-      <h1>hello typescript</h1>
+      <Router>
+      <NavBar/>
+        <Routes> 
+          <Route path ="/" element={<LoginPage/>}/>
+          <Route path ="/dashboard" element={<DashBoardPage/>}/>
+        </Routes>
+      </Router>
     </ThemeProvider>
     </>
   )
