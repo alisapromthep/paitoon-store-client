@@ -16,7 +16,7 @@ const NavBar = () => {
 
     }
 
-    const forms: string[] = ['Purchase Form', 'Income Form', 'Cost Form']
+    const forms: string[] = ['purchase', 'income', 'cost']
     return (
         <AppBar>
             <Toolbar>
@@ -53,7 +53,9 @@ const NavBar = () => {
                         {forms.map((form, i)=>{
                             return (
                                 <MenuItem key={i}>
-                                    <Typography textAlign="center">{form}</Typography>
+                                    <NavLink to= {form} className='nav__link nav__link--black'>
+                                    <Typography textAlign="center">{form} Form</Typography>
+                                    </NavLink>
                                 </MenuItem>
                             )
                         })
