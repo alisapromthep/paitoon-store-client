@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1, 
+        "date": "2021-12-30",
+        "supplier": "company-X",
+        "invoice": "G1223",
+        "product": "brown sugar",
+        "stock": 10,
+        "order": 20,
+        "bonus": 0,
+        "total": 30, 
+        "discount": "n/a",
+        "netPrice": 620,
+        "unitPrice":20,
+        "averagePrice":20,
+        "paymentMethod": "cash",
+        "paid": "yes"
+    }
+
+]

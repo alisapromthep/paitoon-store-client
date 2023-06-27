@@ -1,12 +1,23 @@
+import {Box, TextField} from '@mui/material';
+
 
 interface FormProps{
-    fields: {label: string; name: string; type: string} [];
-    onSubmit: (data: Record<string, string>) => void; 
+    fields: {label: string; name: string;} []; 
 }
 
-const Form = () => {
+const Form: React.FC<FormProps> = ({fields}) => {
     return (
-        <div>Form</div>
+        <Box>
+            {
+                fields.map((field,i)=>(
+                    <TextField
+                    key={i}
+                    label={field.label}
+                    name={field.name}
+                    />
+                ))
+            }
+        </Box>
     )
 }
 

@@ -8,6 +8,8 @@
     "noImplicitAny": true,
     "noImplicitThis": true,
     "strictNullChecks": true,
+    "esModuleInterop": true,
+
 
 
     /* Bundler mode */

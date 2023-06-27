@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1, 
+        "type": "sauce",
+        "product": "oyster sauce",
+        "brand": "fat kid",
+        "package":"box",
+        "size": "small gallon",
+        "minprice": 248,
+        "maxprice": 255
+        
+    },
+    {
+        "id": 2, 
+        "type": "sauce",
+        "product": "fish sauce",
+        "brand": "fat kid",
+        "package":"box",
+        "size": "small gallon",
+        "minprice": 248,
+        "maxprice": 255
+        
+    },
+    {
+        "id": 3, 
+        "type": "sauce",
+        "product": "bulldog sauce",
+        "brand": "japanese",
+        "package":"box",
+        "size": "small gallon",
+        "minprice": 248,
+        "maxprice": 255
+        
+    }
+
+
+]

@@ -63,7 +63,9 @@ const NavBar = () => {
                     </Menu>
                 </Box>
                 <Box sx={{flexGrow:0}}>
-                    <NavLink to="/" className='nav__link'> Login</NavLink>
+                    <NavLink to="/" className='nav__link'> 
+                        <Typography> Login </Typography>
+                    </NavLink>
                 </Box>
             </Toolbar>
         </AppBar>
