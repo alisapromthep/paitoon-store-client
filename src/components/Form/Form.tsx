@@ -3,9 +3,10 @@ import {Box, TextField} from '@mui/material';
 
 interface FormProps{
     fields: {label: string; name: string;} []; 
+    handleChange: (event: React.ChangeEvent<HTMLInputElement>)=>void;
 }
 
-const Form: React.FC<FormProps> = ({fields}) => {
+const Form: React.FC<FormProps> = ({fields, handleChange}) => {
     return (
         <Box>
             {
@@ -14,6 +15,7 @@ const Form: React.FC<FormProps> = ({fields}) => {
                     key={i}
                     label={field.label}
                     name={field.name}
+                    onChange={handleChange}
                     />
                 ))
             }
