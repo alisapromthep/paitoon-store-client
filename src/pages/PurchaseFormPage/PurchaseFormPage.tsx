@@ -33,9 +33,40 @@ const PurchaseFormPage: React.FC = () => {
             paymentMethod: '',
             paid: false,
         };
+
+        const fields = [
+            {label: 'date',
+            name:'date'
+            },
+            {label: 'product name',
+            name:'productName'
+            },
+            {label: 'supplier',
+            name:'supplier'
+            },
+            {label: 'invoice',
+            name:'invoice'},
+            {label: 'order',
+            name:'order'},
+            {label: 'bonus',
+            name:'bonus'},
+            {label: 'discount',
+            name:'discount'},
+            {label: 'unit price',
+            name:'unitPrice'
+            },
+            {label: 'net price',
+            name:'netPrice'
+            },
+            {label: 'payment method',
+            name:'paymentMethod'},
+            {label: 'paid',
+            name:'paid'},
+        ]
     
     const [currProduct, setCurrProduct] = useState<ProductInfo>(product);
     const [allProducts, setAllProducts] = useState<ProductInfo[]>([])
+    const [inputFields, setInputFields] = useState([[fields]])
 
     const handleSubmit = (event: React.SyntheticEvent) => {
         event.preventDefault();
@@ -51,37 +82,15 @@ const PurchaseFormPage: React.FC = () => {
 
     const handleAdd = (event:React.SyntheticEvent) => {
         event.preventDefault();
-    }
+        setAllProducts(prev => ({
+            ...prev,
+            currProduct
+        }))
 
-    const fields = [
-        {label: 'date',
-        name:'date'
-        },
-        {label: 'product name',
-        name:'productName'
-        },
-        {label: 'supplier',
-        name:'supplier'
-        },
-        {label: 'invoice',
-        name:'invoice'},
-        {label: 'order',
-        name:'order'},
-        {label: 'bonus',
-        name:'bonus'},
-        {label: 'discount',
-        name:'discount'},
-        {label: 'unit price',
-        name:'unitPrice'
-        },
-        {label: 'net price',
-        name:'netPrice'
-        },
-        {label: 'payment method',
-        name:'paymentMethod'},
-        {label: 'paid',
-        name:'paid'},
-    ]
+        setInputFields( prev => [...prev, [fields]])
+    };
+
+    console.log(inputFields)
 
 
     return (
@@ -95,10 +104,14 @@ const PurchaseFormPage: React.FC = () => {
                 {/* <Button>
                     <Typography>Add New</Typography>
                 </Button> */}
-                <Form
-                fields = {fields}
-                handleChange = {handleChange}
-                />
+
+                {inputFields.map((_input, i) => (
+                    <Form
+                    key={i}
+                    fields = {fields}
+                    handleChange = {handleChange}
+                    />
+                ))}
                 <Button onClick={handleAdd}>
                     <Typography> + Add</Typography>
                 </Button>
