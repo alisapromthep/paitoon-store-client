@@ -1,5 +1,7 @@
 import './App.scss';
 import { ThemeProvider } from '@mui/material/styles';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import theme from './theme';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
@@ -13,16 +15,18 @@ function App() {
   return (
     <>
     <ThemeProvider theme={theme}>
-      <Router>
-      <NavBar/>
-        <Routes> 
-          <Route path ="/" element={<LoginPage/>}/>
-          <Route path ="/dashboard" element={<DashBoardPage/>}/>
-          <Route path ="/inventory" element={<InventoryPage/>}/>
-          <Route path="/purchase" element={<PurchaseFormPage/>}/>
-        </Routes>
-      </Router>
-    </ThemeProvider>
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
+          <Router>
+          <NavBar/>
+            <Routes> 
+              <Route path ="/" element={<LoginPage/>}/>
+              <Route path ="/dashboard" element={<DashBoardPage/>}/>
+              <Route path ="/inventory" element={<InventoryPage/>}/>
+              <Route path="/purchase" element={<PurchaseFormPage/>}/>
+            </Routes>
+          </Router>
+        </LocalizationProvider>
+      </ThemeProvider>
     </>
   )
 }

@@ -1,4 +1,5 @@
-import { Container, Typography, TextField, Button } from "@mui/material";
+import { Container, Typography, Button } from "@mui/material";
+import {DateField} from '@mui/x-date-pickers';
 import { useState } from 'react';
 import Heading from "../../components/Heading/Heading";
 import Form from '../../components/Form/Form';
@@ -35,9 +36,6 @@ const PurchaseFormPage: React.FC = () => {
         };
 
         const fields = [
-            {label: 'date',
-            name:'date'
-            },
             {label: 'product name',
             name:'productName'
             },
@@ -67,13 +65,22 @@ const PurchaseFormPage: React.FC = () => {
     const [currProduct, setCurrProduct] = useState<ProductInfo>(product);
     const [allProducts, setAllProducts] = useState<ProductInfo[]>([])
     const [inputFields, setInputFields] = useState([[fields]])
+    const [toggle, setToggle] = useState(false);
 
     const handleSubmit = (event: React.SyntheticEvent) => {
         event.preventDefault();
+        console.log(currProduct,'currproduct');
+        setAllProducts(prev => ({
+            ...prev,
+            currProduct
+        }))
+        console.log(allProducts);
     }
 
-    const handleChange = (event:{ target: HTMLInputElement}) =>{
+    const handleChange = (index:number, event:{ target: HTMLInputElement}) =>{
         const {name, value} = event.target;
+        const data = [...inputFields];  
+        data[index][name] = value;
         setCurrProduct((prev)=>({
             ...prev,
             [name]: value
@@ -101,6 +108,10 @@ const PurchaseFormPage: React.FC = () => {
         >
             <Heading title='Purchase Form'/>
             <form onSubmit={handleSubmit}>
+                <DateField label='date'
+                onChange={() => handleChange}
+                format='YYYY-MM-DD'
+                />
                 {/* <Button>
                     <Typography>Add New</Typography>
                 </Button> */}
@@ -109,12 +120,15 @@ const PurchaseFormPage: React.FC = () => {
                     <Form
                     key={i}
                     fields = {fields}
-                    handleChange = {handleChange}
+                    handleChange = {(event)=> handleChange(i,event)}
                     />
                 ))}
                 <Button onClick={handleAdd}>
                     <Typography> + Add</Typography>
                 </Button>
+                <Button
+                type='submit'
+                >Submit</Button>
             </form>
         </Container>
     )
