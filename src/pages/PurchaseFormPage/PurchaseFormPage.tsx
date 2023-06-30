@@ -3,6 +3,8 @@ import {DateField} from '@mui/x-date-pickers';
 import { useState } from 'react';
 import Heading from "../../components/Heading/Heading";
 import Form from '../../components/Form/Form';
+import PurchaseForm from '../../components/PurchaseForm/PurchaseForm';
+
 
 interface ProductInfo {
     date: string;
@@ -35,32 +37,6 @@ const PurchaseFormPage: React.FC = () => {
             paid: false,
         };
 
-        const fields = [
-            {label: 'product name',
-            name:'productName'
-            },
-            {label: 'supplier',
-            name:'supplier'
-            },
-            {label: 'invoice',
-            name:'invoice'},
-            {label: 'order',
-            name:'order'},
-            {label: 'bonus',
-            name:'bonus'},
-            {label: 'discount',
-            name:'discount'},
-            {label: 'unit price',
-            name:'unitPrice'
-            },
-            {label: 'net price',
-            name:'netPrice'
-            },
-            {label: 'payment method',
-            name:'paymentMethod'},
-            {label: 'paid',
-            name:'paid'},
-        ]
     
     const [currProduct, setCurrProduct] = useState<ProductInfo>(product);
     const [allProducts, setAllProducts] = useState<ProductInfo[]>([])
@@ -115,14 +91,8 @@ const PurchaseFormPage: React.FC = () => {
                 {/* <Button>
                     <Typography>Add New</Typography>
                 </Button> */}
-
-                {inputFields.map((_input, i) => (
-                    <Form
-                    key={i}
-                    fields = {fields}
-                    handleChange = {(event)=> handleChange(i,event)}
-                    />
-                ))}
+                <PurchaseForm
+                handleChange={(index: number,event)=>handleChange(index,event)}/>
                 <Button onClick={handleAdd}>
                     <Typography> + Add</Typography>
                 </Button>
