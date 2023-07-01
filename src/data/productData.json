@@ -7,7 +7,8 @@
         "package":"box",
         "size": "small gallon",
         "minprice": 248,
-        "maxprice": 255
+        "maxprice": 255,
+        "active": true
         
     },
     {
@@ -18,7 +19,8 @@
         "package":"box",
         "size": "small gallon",
         "minprice": 248,
-        "maxprice": 255
+        "maxprice": 255,
+        "active": true
         
     },
     {
@@ -29,7 +31,8 @@
         "package":"box",
         "size": "small gallon",
         "minprice": 248,
-        "maxprice": 255
+        "maxprice": 255,
+        "active": true
         
     }
 
