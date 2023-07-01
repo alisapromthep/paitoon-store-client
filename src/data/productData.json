@@ -1,6 +1,7 @@
 [
     {
         "id": 1, 
+        "code": 12343,
         "type": "sauce",
         "product": "oyster sauce",
         "brand": "fat kid",
@@ -13,6 +14,7 @@
     },
     {
         "id": 2, 
+        "code": 12343,
         "type": "sauce",
         "product": "fish sauce",
         "brand": "fat kid",
@@ -25,6 +27,7 @@
     },
     {
         "id": 3, 
+        "code": 12343,
         "type": "sauce",
         "product": "bulldog sauce",
         "brand": "japanese",
