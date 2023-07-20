@@ -40,7 +40,7 @@ const PurchaseFormPage: React.FC = () => {
     
     const [currProduct, setCurrProduct] = useState<ProductInfo>(product);
     const [allProducts, setAllProducts] = useState<ProductInfo[]>([])
-    const [inputFields, setInputFields] = useState([[fields]])
+    // const [inputFields, setInputFields] = useState([[fields]])
     const [toggle, setToggle] = useState(false);
 
     const handleSubmit = (event: React.SyntheticEvent) => {
@@ -53,15 +53,15 @@ const PurchaseFormPage: React.FC = () => {
         console.log(allProducts);
     }
 
-    const handleChange = (index:number, event:{ target: HTMLInputElement}) =>{
-        const {name, value} = event.target;
-        const data = [...inputFields];  
-        data[index][name] = value;
-        setCurrProduct((prev)=>({
-            ...prev,
-            [name]: value
-    }));
-    };
+    // const handleChange = (index:number, event:{ target: HTMLInputElement}) =>{
+    //     const {name, value} = event.target;
+    //     const data = [...inputFields];  
+    //     data[index][name] = value;
+    //     setCurrProduct((prev)=>({
+    //         ...prev,
+    //         [name]: value
+    // }));
+    // };
 
     const handleAdd = (event:React.SyntheticEvent) => {
         event.preventDefault();
@@ -70,10 +70,8 @@ const PurchaseFormPage: React.FC = () => {
             currProduct
         }))
 
-        setInputFields( prev => [...prev, [fields]])
+        // setInputFields( prev => [...prev, [fields]])
     };
-
-    console.log(inputFields)
 
 
     return (
@@ -85,14 +83,14 @@ const PurchaseFormPage: React.FC = () => {
             <Heading title='Purchase Form'/>
             <form onSubmit={handleSubmit}>
                 <DateField label='date'
-                onChange={() => handleChange}
+                onChange={() => { return }}
                 format='YYYY-MM-DD'
                 />
                 {/* <Button>
                     <Typography>Add New</Typography>
                 </Button> */}
                 <PurchaseForm
-                handleChange={(index: number,event)=>handleChange(index,event)}/>
+                handleChange={()=> {return}}/>
                 <Button onClick={handleAdd}>
                     <Typography> + Add</Typography>
                 </Button>

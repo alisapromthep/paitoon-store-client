@@ -7,7 +7,7 @@ interface PurchaseFormProp{
 
 const PurchaseForm:React.FC<PurchaseFormProp> = ({handleChange}) => {
 
-    const fields = [
+    const fields = [[
         {label: 'product name',
         name:'productName'
         },
@@ -31,14 +31,14 @@ const PurchaseForm:React.FC<PurchaseFormProp> = ({handleChange}) => {
         {label: 'payment method',
         name:'paymentMethod'},
         {label: 'paid',
-        name:'paid'},
+        name:'paid'},]
     ]
     return (
         <>
             {fields.map((_input, i) => (
                 <Form
                 key={i}
-                fields = {fields}
+                fields = {fields[0]}
                 handleChange = {handleChange}
                 />
             ))}

@@ -9,6 +9,8 @@ import DashBoardPage from './pages/DashBoardPage/DashBoardPage';
 import LoginPage from './pages/LoginPage/LoginPage';
 import InventoryPage from './pages/InventoryPage/InventoryPage';
 import PurchaseFormPage from './pages/PurchaseFormPage/PurchaseFormPage';
+import IncomeFormPage from './pages/IncomeFormPage/IncomeFormPage';
+import ExpenseFormPage from './pages/ExpenseFormPage/ExpenseFormPage';
 
 function App() {
 
@@ -23,6 +25,8 @@ function App() {
               <Route path ="/dashboard" element={<DashBoardPage/>}/>
               <Route path ="/inventory" element={<InventoryPage/>}/>
               <Route path="/purchase" element={<PurchaseFormPage/>}/>
+              <Route path="/income" element={<IncomeFormPage/>}/>
+              <Route path="/expenses" element={<ExpenseFormPage/>}/>
             </Routes>
           </Router>
         </LocalizationProvider>
